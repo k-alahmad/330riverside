@@ -247,7 +247,7 @@ const FloorPlan = () => {
         <div className="relative">
           <div
             style={{ backgroundColor: floorData[i].color }}
-            className="rounded shadow-xl z-30 p-3 w-24 absolute top-0 -left-4 scale-0 sm:group-hover:scale-100 transition-all duration-300 origin-bottom flex flex-col justify-center items-center"
+            className="rounded shadow-xl z-30 p-3 w-24 absolute top-0 -left-4 scale-0 sm:group-hover:scale-100 transition-all duration-300 origin-top flex flex-col justify-center items-center"
           >
             <p className="text-smaller font-semibold text-[#797979]">
               {floorData[i].name}
@@ -272,7 +272,7 @@ const FloorPlan = () => {
 
   return (
     <div
-      className="relative h-[1650px] lg:h-[900px] grid grid-cols-12 "
+      className="relative h-[1950px] lg:h-[900px] grid grid-cols-12 "
       dir={i18n.language == "en" ? "" : "rtl"}
     >
       <div className="border-r-[1px] border-l-[1px] border-gray-200 col-span-4" />
@@ -280,12 +280,11 @@ const FloorPlan = () => {
       <div className="border-r-[1px] border-gray-200 col-span-4" />
       <div className="absolute pt-16 bg-transparent h-full w-full">
         <div
-          className="text-huge font-bold lg:w-[35%] w-[90%] px-[5%]"
+          className="text-huge font-bold lg:w-[70%] w-[90%] px-[5%]"
           dir={i18n.language == "en" ? "" : "rtl"}
         >
           {t("floorTitle")}
         </div>
-
         <div className="lg:grid lg:grid-cols-12 pt-12 ">
           <div className="col-span-4 flex flex-col justify-start items-center">
             <div
@@ -387,7 +386,7 @@ const FloorPlan = () => {
               />
             </div>
 
-            <div className="grid grid-cols-2 mt-28 gap-3">
+            <div className="grid grid-cols-2 mt-36 lg:mt-40 gap-y-3 gap-x-1 lg:mx-2">
               <ColorPaletteItem color={"#89D2D7"} text={"1 BED UNIT"} />
               <ColorPaletteItem color={"#5FB6C4"} text={"1.5 BED UNIT"} />
               <ColorPaletteItem color={"#47CAEA"} text={"2 BED UNIT"} />
@@ -405,14 +404,14 @@ const FloorPlan = () => {
               slidesToShow={3}
               touchMove={true}
               arrows={false}
-              className="text-white mt-32 max-w-[300px] sm:hidden"
+              className="text-white mt-16 max-w-[300px] sm:hidden"
               customPaging={(index) => {
                 return index == currentSlide ? (
-                  <div key={index} className="text-lightBlack text-med py-2">
+                  <div key={index} className="text-lightBlack text-med">
                     <FiberManualRecordIcon />
                   </div>
                 ) : (
-                  <div key={index} className="text-lightBlack text-med py-2">
+                  <div key={index} className="text-lightBlack text-med">
                     <OutFiberManualRecordIcon />
                   </div>
                 );
@@ -466,7 +465,6 @@ const FloorPlan = () => {
             >
               {floorData.map((d, i) => {
                 return (
-                  // <div key={i}>
                   <LazyImage
                     key={i}
                     src={d.image}
@@ -477,7 +475,6 @@ const FloorPlan = () => {
                       "h-[500px] xl:h-[600px] w-full object-conatin rounded"
                     }
                   />
-                  // </div>
                 );
               })}
             </Slider>
@@ -502,17 +499,18 @@ const FloorPlan = () => {
                     dir={i18n.language == "en" ? "" : "rtl"}
                     className=" w-full h-[500px] xl:h-[700px] flex flex-col justify-center items-center"
                   >
-                    <p className="text-big font-bold rounded-lg py-1 flex justify-start mt-5">
+                    <p className="text-big font-bold rounded-lg py-1 flex justify-start">
                       {t("roomCode")}
                       <span
                         style={{
                           color: d.color,
                         }}
+                        className="px-3"
                       >
                         {d.name}
                       </span>
                     </p>
-                    <p className="font-bold text-bigger">
+                    <p className="font-bold text-bigger pt-12">
                       {d.bedRoomNumber} {t("floorBedroom")}
                     </p>
                     <p className="text-[#797979] text-med">{d.type}</p>

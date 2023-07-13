@@ -39,7 +39,7 @@ const CustomInput = ({ icon, placeholder, name, id, value, onChange }) => {
       {icon}
       <input
         type="text"
-        className="bg-transparent  px-2 w-full outline-none"
+        className="bg-transparent px-2 w-full outline-none"
         name={name}
         onChange={onChange}
         placeholder={placeholder}
@@ -112,9 +112,13 @@ function Register({ modal }) {
   return (
     <div
       dir={i18n.language == "en" ? "ltr" : "rtl"}
-      className={`md:grid md:grid-cols-12  bg-transparent`}
+      className={`md:grid md:grid-cols-12 bg-transparent`}
     >
-      <div className="col-span-8 p-8 lg:px-16 xl:grid xl:grid-cols-12 gap-6">
+      <div
+        className={`col-span-8 p-4 lg:px-4 xl:grid xl:grid-cols-12 gap-4 ${
+          modal && "bg-gray-100"
+        } row-span-2`}
+      >
         {downloadState && !registerState && modal && (
           <div className="col-span-12 text-big lg:text-bigger font-bold text-red-800 flex justify-center items-center">
             {t("brochurMSG")}
@@ -122,7 +126,6 @@ function Register({ modal }) {
         )}
         {counterState && !registerState && !downloadState && modal && (
           <div className="col-span-12 text-big lg:text-bigger font-bold text-red-800 flex justify-center items-center">
-            {/* {t("brochurMSG")} */}
             Please Register to view all Rooms
           </div>
         )}
@@ -190,11 +193,11 @@ function Register({ modal }) {
           />
         </div>
       </div>
-      <div className="col-span-4">
+      <div className={`col-span-4 ${modal && "max-md:hidden"} row-span-2`}>
         <img
           src={photo1}
           alt="Register Image"
-          className="w-full max-md:h-[300px] md:h-[700px] object-cover"
+          className="w-full max-md:h-[400px] max-md:pt-12 md:h-full object-cover object-center"
         />
       </div>
     </div>

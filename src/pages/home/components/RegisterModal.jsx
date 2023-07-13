@@ -28,15 +28,15 @@ export default function Modal() {
       >
         <div
           ref={ref}
-          className="rounded-lg shadow-lg relative flex flex-col bg-white outline-none focus:outline-none overflow-x-hidden overflow-y-scroll max-h-screen max-w-[95%] xl:max-w-[80%]"
+          className="rounded-lg shadow-lg relative flex flex-col outline-none focus:outline-none overflow-x-hidden overflow-y-scroll max-h-screen max-w-[95%] xl:max-w-[80%]"
         >
           <div
             onClick={() => {
               dispatch(hideModal());
             }}
-            className="cursor-pointer font-bold self-center text-black hover:scale-125 hover:rotate-180 fixed md:absolute right-5 top-3 transition-all duration-300"
+            className="cursor-pointer font-bold self-center text-black hover:scale-125 hover:rotate-180 absolute right-5 top-2 sm:max-md:top-8 md:top-3 transition-all duration-300"
           >
-            <MdClose size={50} />
+            <MdClose className="text-bigger sm:text-huge" />
           </div>
           <Register modal={true} />
         </div>
