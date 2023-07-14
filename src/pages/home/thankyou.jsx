@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { BsFillCheckCircleFill } from "react-icons/Bs";
+import { BsFillCheckCircleFill } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 const thankyou = () => {
 	const navigate = useNavigate();
