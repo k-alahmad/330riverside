@@ -33,12 +33,20 @@ const SocialElement = ({ icon, name }) => {
 	);
 };
 
-const CustomInput = ({ icon, placeholder, name, id, value, onChange }) => {
+const CustomInput = ({
+	icon,
+	placeholder,
+	type,
+	name,
+	id,
+	value,
+	onChange,
+}) => {
 	return (
 		<div className='border-b-[1px] border-black px-4 py-3 flex'>
 			{icon}
 			<input
-				type='text'
+				type={type}
 				className='bg-transparent px-2 w-full outline-none'
 				name={name}
 				onChange={onChange}
@@ -143,6 +151,7 @@ function Register({ modal }) {
 					<CustomInput
 						icon={<MdPerson className='text-black text-big' />}
 						placeholder={t("formFullName")}
+						type='text'
 						name='fullName'
 						id='fullName'
 						value={fullName}
@@ -152,6 +161,7 @@ function Register({ modal }) {
 					<CustomInput
 						icon={<MdMail className='text-black text-big' />}
 						placeholder={t("formEmail")}
+						type='email'
 						name='email'
 						id='email'
 						value={email}
