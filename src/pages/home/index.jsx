@@ -12,7 +12,6 @@ import { showModal } from "../../redux/modal.slice";
 
 const Home = () => {
   const dispatch = useDispatch();
-
   useEffect(() => {
     setTimeout(() => {
       dispatch(showModal());
