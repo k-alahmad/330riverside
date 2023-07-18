@@ -1,13 +1,14 @@
 // import { lazyLoad } from "../helpers/lazyLoad";
 import { lazy } from "react";
+const home = lazy(() => import("../pages/home/index.jsx"));
+const thankYou = lazy(() => import("../pages/thankYou/index.jsx"));
 export const publicRoutes = [
-  // { path: "/", element: lazyLoad("../pages/home/index.jsx") },
-  { path: "/", element: lazy(() => import("../pages/home/index.jsx")) },
-  { path: "/ar", element: lazy(() => import("../pages/home/index.jsx")) },
-  { path: "/fa", element: lazy(() => import("../pages/home/index.jsx")) },
+  { path: "/", element: home },
+  { path: "/ar", element: home },
+  { path: "/fa", element: home },
   {
     path: "/thankyou",
-    element: lazy(() => import("../pages/home/thankyou.jsx")),
+    element: thankYou,
   },
 ];
 

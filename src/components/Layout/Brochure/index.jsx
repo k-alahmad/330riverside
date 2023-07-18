@@ -14,7 +14,7 @@ const Brochure = () => {
   const registerState = useSelector(selectRegisterState);
   return (
     <div
-      className="bg-lightBlack w-full  flex flex-col justify-center items-center"
+      className="bg-lightBlack w-full flex flex-col justify-center items-center"
       dir={i18n.language == "en" ? "ltr" : "rtl"}
     >
       <img

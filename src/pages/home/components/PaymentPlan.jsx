@@ -23,49 +23,38 @@ const PaymentPlan = () => {
   const { i18n, t } = useTranslation();
   return (
     <div
-      className="relative h-[600px] sm:h-[600px] xl:h-[400px] grid grid-cols-12 border-b-[1px]  "
       dir={i18n.language == "en" ? "" : "rtl"}
+      className="xl:grid xl:grid-cols-12 max-lg:space-y-2 max-lg:mt-24 max-lg:pt-16 mt-16 pt-12 border-t-2"
     >
-      <div className="border-r-[1px] border-l-[1px] border-gray-200 col-span-4" />
-      <div className="border-r-[1px] border-gray-200 col-span-4" />
-      <div className="border-r-[1px] border-gray-200 col-span-4" />
-
-      <div className="absolute h-full w-full xl:grid xl:grid-cols-12 max-lg:space-y-2 max-lg:pt-24">
-        <div className="col-span-4 flex justify-center items-center font-bold text-huge xl:p-12 max-xl:px-4">
-          {t("PaymentPlan")}
+      <div className="col-span-4 flex justify-center items-center font-bold text-huge xl:p-12 max-xl:px-4">
+        {t("PaymentPlan")}
+      </div>
+      <div className="col-span-4 ">
+        <p className="text-small text-[#909090] pb-32 p-4">
+          {t("PaymentPlanType")}
+        </p>
+        <div className="relative flex flex-col w-full">
+          <div className=" w-full h-[2px] bg-black self-center " />
+          <Circle
+            number={20}
+            customStyle={"left-[4%] capitalize"}
+            text={t("BookingAmount")}
+          />
+          <Circle
+            number={60}
+            customStyle={"left-[40%] capitalize"}
+            text={t("installments")}
+          />
+          <Circle
+            number={20}
+            customStyle={"left-[75%] capitalize"}
+            text={t("finalInsallment")}
+          />
         </div>
-        <div className="col-span-4 ">
-          <p className="text-small text-[#909090] pb-32 p-4">
-            {t("PaymentPlanType")}
-          </p>
-          <div className="relative flex flex-col w-full">
-            <div className=" w-full h-[2px] bg-black self-center " />
-            <Circle
-              number={20}
-              customStyle={"left-[4%] capitalize"}
-              text={t("BookingAmount")}
-            />
-            <Circle
-              number={60}
-              customStyle={"left-[40%] capitalize"}
-              text={t("installments")}
-            />
-            <Circle
-              number={20}
-              customStyle={"left-[75%] capitalize"}
-              text={t("finalInsallment")}
-            />
-            {/* <Circle
-							number={10}
-							customStyle={"left-[75%] "}
-							text={"instalments after handover for a period of time."}
-						/> */}
-          </div>
-        </div>
-        <div className="col-span-4 flex flex-col justify-center items-center max-xl:pt-36 xl:p-12">
-          <p className="text-big font-medium">{t("price")} </p>
-          <p className="text-huge font-bold">AED1.2M</p>
-        </div>
+      </div>
+      <div className="col-span-4 flex flex-col justify-center items-center max-xl:pt-36 xl:p-12">
+        <p className="text-big font-medium">{t("price")} </p>
+        <p className="text-huge font-bold">AED1.2M</p>
       </div>
     </div>
   );

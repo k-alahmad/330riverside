@@ -34,7 +34,7 @@ export default function Modal() {
             onClick={() => {
               dispatch(hideModal());
             }}
-            className="cursor-pointer font-bold self-center text-black hover:scale-125 hover:rotate-180 absolute right-5 top-2 sm:max-md:top-8 md:top-3 transition-all duration-300"
+            className="cursor-pointer font-bold self-center text-black hover:scale-125 hover:rotate-180 absolute right-5 top-2 sm:max-md:top-8 md:top-3 transition-all duration-300 z-30"
           >
             <MdClose className="text-bigger sm:text-huge" />
           </div>
