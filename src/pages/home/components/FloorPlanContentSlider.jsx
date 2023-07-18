@@ -15,7 +15,7 @@ const FloorPlanContentSlider = ({ slideRef2 }) => {
       slidesToShow={1}
       vertical={true}
       touchMove={false}
-      className="h-full max-w-[300px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[300px] xl:max-w-[350px] 2xl:max-w-[500px]"
+      className="h-full max-w-[300px] sm:max-w-[600px] md:max-w-[700px] lg:max-w-[300px] xl:max-w-[350px] 2xl:max-w-[450px]"
     >
       {floorData.map((d, i) => {
         return (
