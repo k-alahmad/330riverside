@@ -3,11 +3,13 @@ import { MdClose } from "react-icons/md";
 import Register from "./Register";
 import { useDispatch, useSelector } from "react-redux";
 import { hideModal, selectState } from "../../../redux/modal.slice";
+import { useTranslation } from "react-i18next";
 
 export default function Modal() {
   const ref = useRef(null);
   const dispatch = useDispatch();
   const open = useSelector(selectState);
+  const { i18n } = useTranslation();
   const handleClickOutside = (event) => {
     if (ref.current && !ref.current.contains(event.target)) {
       dispatch(hideModal());
@@ -34,7 +36,9 @@ export default function Modal() {
             onClick={() => {
               dispatch(hideModal());
             }}
-            className="cursor-pointer font-bold self-center text-black hover:scale-125 hover:rotate-180 absolute right-5 top-2 sm:max-md:top-8 md:top-3 transition-all duration-300 z-30"
+            className={`cursor-pointer font-bold self-center text-black hover:scale-125 hover:rotate-180 absolute ${
+              i18n.language == "en" ? "right-5" : "left-5"
+            }  top-2 sm:max-md:top-8 md:top-3 transition-all duration-300 z-30`}
           >
             <MdClose className="text-bigger sm:text-huge" />
           </div>

@@ -94,7 +94,7 @@ const RegisterForm = () => {
     <form
       ref={form}
       onSubmit={handleSubmit}
-      className="col-span-6 lg:row-span-2 space-y-12 max-lg:pt-8 flex flex-col justify-center items-stretch"
+      className="flex flex-col justify-between items-stretch h-full space-y-8"
     >
       <CustomInput
         icon={<MdPerson className="text-black text-big" />}

@@ -47,24 +47,32 @@ function Register({ modal }) {
             Please Register to view all Rooms
           </div>
         )}
-        <div className="col-span-6 space-y-12 flex flex-col justify-center items-stretch">
+        <div className="col-span-6 space-y-12 flex flex-col justify-between items-stretch">
           <p className="font-bold text-bigger xl:text-huge ">{t("slogan")}</p>
           <p className="font-light text-small">{t("formSubTitle")}</p>
+          <div className="max-xl:hidden">
+            <SocialElement
+              icon={<MdLocationOn className="text-white" />}
+              name={t("address")}
+            />
+          </div>
         </div>
-        <RegisterForm />
-        <div className="space-y-6 pt-8 lg:pt-2 lg:col-span-6">
+        <div className="col-span-6 max-lg:pt-8">
+          <RegisterForm />
+        </div>
+        <div className="xl:hidden max-xl:mt-6">
           <SocialElement
             icon={<MdLocationOn className="text-white" />}
             name={t("address")}
           />
         </div>
       </div>
-      <div className={`col-span-4 ${modal && "max-md:hidden"} row-span-2`}>
+      <div className={`col-span-4  ${modal && "max-md:hidden"}`}>
         <img
           src={photo1}
           alt="Register Image"
-          className={`w-full max-md:h-[400px] max-md:pt-12 ${
-            !modal ? "md:h-[550px]" : "md:h-full"
+          className={`w-full ${
+            !modal ? "h-[370px] sm:h-[500px]" : "md:h-full md:max-h-[500px]"
           } object-cover object-center`}
         />
       </div>

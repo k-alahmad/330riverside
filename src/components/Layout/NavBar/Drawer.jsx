@@ -1,24 +1,39 @@
 import React from "react";
 import { MdClose } from "react-icons/md";
 import Logo from "../../../assets/logo/AVA-Logo.svg";
+import { useTranslation } from "react-i18next";
 export default function Drawer({ children, isOpen, setIsOpen }) {
+  const { i18n } = useTranslation();
   return (
     <main
       className={
-        " fixed overflow-hidden z-50  bg-gray-900 bg-opacity-0 inset-0 transform ease-in-out " +
+        ` fixed overflow-hidden z-50  bg-gray-900 bg-opacity-0 inset-0 transform ease-in-out ` +
         (isOpen
-          ? " transition-opacity opacity-100 duration-500 translate-x-0"
-          : " transition-all delay-500 opacity-0 translate-x-full")
+          ? ` transition-opacity opacity-100 duration-500 ${
+              i18n.language == "en" ? "translate-x-0" : "-translate-x-0"
+            } `
+          : ` ${
+              i18n.language == "en" ? "translate-x-full" : "-translate-x-full"
+            } transition-all delay-500 opacity-0 `)
       }
     >
       <section
         className={
-          " w-screen max-w-[200px] md:max-w-lg right-0 absolute bg-white h-full shadow-xl delay-400 duration-500 ease-in-out transition-all transform  " +
-          (isOpen ? " translate-x-0 " : " translate-x-full ")
+          ` w-screen max-w-[200px] md:max-w-lg ${
+            i18n.language == "en" ? "right-0" : "left-0"
+          } absolute bg-white h-full shadow-xl delay-400 duration-500 ease-in-out transition-all transform  ` +
+          (isOpen
+            ? ` ${i18n.language == "en" ? "translate-x-0" : "-translate-x-0"}  `
+            : ` ${
+                i18n.language == "en" ? "translate-x-full" : "-translate-x-full"
+              }  `)
         }
       >
         <article className="relative w-full pb-10 flex flex-col justify-start items-center space-y-6 overflow-y-scroll h-full">
-          <header className="p-4 font-bold w-full flex justify-between items-start ">
+          <header
+            dir={i18n.language == "en" ? "ltr" : "rtl"}
+            className="p-4 font-bold w-full flex justify-between items-start "
+          >
             <MdClose
               size={30}
               onClick={() => {
