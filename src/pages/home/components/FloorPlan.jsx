@@ -56,6 +56,7 @@ const FloorPlan = () => {
             setDisableBtn={setDisableBtn}
           />
           <FloorPlanColorPalette />
+          {/* Mobile View */}
           <FloorPlanBuildingLayoutSlider
             selected={selected}
             setSelected={setSelected}
