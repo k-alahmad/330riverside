@@ -8,9 +8,7 @@ export default {
       keyframes: {
         camera: {
           "0% ": { "object-position": "left" },
-          // "25% ": { "object-position": "center" },
           "50% ": { "object-position": "right" },
-          // "75% ": { "object-position": "center" },
           "100% ": { "object-position": "left" },
         },
         textCamera: {

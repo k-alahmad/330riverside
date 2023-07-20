@@ -5,6 +5,7 @@ const initialState = {
   registered: JSON.parse(localStorage.getItem("Registered")) ?? false,
   counterFull: JSON.parse(localStorage.getItem("CounterFull")) ?? false,
   download: false,
+  data: null,
 };
 const modalSlice = createSlice({
   name: "modal",
@@ -12,10 +13,12 @@ const modalSlice = createSlice({
   reducers: {
     showModal: (state, action) => {
       state.open = true;
+      state.data = action.payload;
     },
     hideModal: (state, action) => {
       state.open = false;
       state.download = false;
+      state.data = null;
     },
     downloadBrochure: (state, action) => {
       state.download = true;
@@ -49,5 +52,6 @@ export const selectState = (state) => state.modal.open;
 export const selectRegisterState = (state) => state.modal.registered;
 export const selectDownloadState = (state) => state.modal.download;
 export const selectCounterState = (state) => state.modal.counterFull;
+export const selectModalData = (state) => state.modal.data;
 
 export default modalSlice.reducer;

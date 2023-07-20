@@ -1,17 +1,5 @@
-// import { NavLink } from "react-router-dom";
 const LinkElement = ({ name, link, styled, onClick, selectedLink }) => {
   return (
-    // <NavLink
-    //   onClick={onClick}
-    //   style={{
-    //     //   color: isActive ? "#B28A5D" : "black",
-    //     //   borderRadius: 2,
-    //     //   borderBottomColor: isActive ? "#B28A5D" : "white",
-    //     //   borderBottomWidth: 3,
-    //     paddingBottom: 8,
-    //   }}
-    //   to={"#"}
-    // >
     <div
       className={`pb-[8px]  ${
         link == selectedLink
@@ -22,7 +10,6 @@ const LinkElement = ({ name, link, styled, onClick, selectedLink }) => {
     >
       <p className={`px-1 cursor-pointer text-med ${styled}`}>{name}</p>
     </div>
-    // </NavLink>
   );
 };
 

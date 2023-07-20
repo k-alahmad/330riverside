@@ -10,7 +10,7 @@ const withRoute = (routes) => {
 
 function Router() {
   return (
-    <PageLayout>
+    <PageLayout type={"lines"}>
       <Routes>
         <Route>{withRoute(publicRoutes)}</Route>
       </Routes>

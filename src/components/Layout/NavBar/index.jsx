@@ -8,20 +8,14 @@ import { FaPlus } from "react-icons/fa";
 import { useDispatch } from "react-redux";
 import { showModal } from "../../../redux/modal.slice";
 import { handleScroll } from "../../../helpers/scroll";
+import { NavElement } from "../../../data/navData";
+import RegisterT1 from "../../UI/RegisterT1";
 const NavBar = () => {
   const { t, i18n } = useTranslation();
   const [mobileOpen, setMobileOpen] = useState(false);
   const [header, setHeader] = useState(false);
   const [selectedLink, setSelectedLink] = useState("home");
   const dispatch = useDispatch();
-  let elements = [
-    { name: t("Home"), link: "home" },
-    { name: t("Payment"), link: "payment" },
-    { name: t("Nearby"), link: "nearby" },
-    { name: t("Floor Plan"), link: "floorPlan" },
-    { name: t("Location"), link: "location" },
-    { name: t("Contact Us"), link: "contactus" },
-  ];
 
   const listenScrollEvent = (event) => {
     if (document.documentElement.scrollTop < 100) {
@@ -54,7 +48,9 @@ const NavBar = () => {
             <div className="flex flex-1">
               <div
                 className="flex justify-center items-center px-[3%] cursor-pointer"
-                onClick={() => dispatch(showModal())}
+                onClick={() =>
+                  dispatch(showModal({ data: <RegisterT1 modal={true} /> }))
+                }
               >
                 <FaPlus color="#222222" className="animate-pulse" />
                 <p className="text-lightBlack font-normal uppercase p-4 ">
@@ -75,10 +71,10 @@ const NavBar = () => {
         <div className={`h-24`} />
       </div>
       <Drawer isOpen={mobileOpen} setIsOpen={setMobileOpen}>
-        {elements.map((e) => (
+        {NavElement.map((e) => (
           <LinkElement
             key={e.link}
-            name={e.name}
+            name={t(e.name)}
             link={e.link}
             selectedLink={selectedLink}
             onClick={() => {

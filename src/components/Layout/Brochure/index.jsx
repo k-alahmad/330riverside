@@ -8,6 +8,7 @@ import {
   showModal,
 } from "../../../redux/modal.slice";
 import BrochurePdf from "../../../assets/pdf/330.pdf";
+import RegisterT1 from "../../UI/RegisterT1";
 const Brochure = () => {
   const { i18n, t } = useTranslation();
   const dispatch = useDispatch();
@@ -40,7 +41,7 @@ const Brochure = () => {
                 alink.click();
               } else {
                 dispatch(downloadBrochure());
-                dispatch(showModal());
+                dispatch(showModal({ data: <RegisterT1 modal={true} /> }));
               }
             }}
           >
