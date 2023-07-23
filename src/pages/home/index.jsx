@@ -19,7 +19,9 @@ const Home = () => {
       <div id="location" />
       <LocationT1 />
       <div id="contactus" />
-      <RegisterT1 />
+      <div className="-translate-y-24">
+        <RegisterT1 />
+      </div>
     </>
   );
 };

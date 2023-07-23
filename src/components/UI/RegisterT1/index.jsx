@@ -1,6 +1,5 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
-import photo1 from "../../../assets/images/register.webp";
 import { MdLocationOn } from "react-icons/md";
 import { useSelector } from "react-redux";
 import {
@@ -30,10 +29,12 @@ function RegisterT1({ modal }) {
   return (
     <div
       dir={i18n.language == "en" ? "ltr" : "rtl"}
-      className={`md:grid md:grid-cols-12 bg-transparent`}
+      className={`md:grid md:grid-cols-12 bg-transparent ${!modal && "py-28"}`}
     >
       <div
-        className={`col-span-8 p-4 lg:px-4 xl:grid xl:grid-cols-12 gap-4 ${
+        className={` ${
+          !modal ? " col-span-8 " : " col-span-12 "
+        } p-4 lg:px-4 xl:grid xl:grid-cols-12 gap-4 ${
           modal && "bg-gray-100"
         } row-span-2`}
       >
@@ -71,15 +72,17 @@ function RegisterT1({ modal }) {
           />
         </div>
       </div>
-      <div className={`col-span-4  ${modal && "max-md:hidden"}`}>
-        <img
-          src={data.photo}
-          alt="Register Image"
-          className={`w-full ${
-            !modal ? "h-[370px] sm:h-[500px]" : "md:h-full md:max-h-[500px]"
-          } object-cover object-center`}
-        />
-      </div>
+      {!modal && (
+        <div className={`col-span-4  ${modal && "max-md:hidden"} max-lg:mt-8`}>
+          <img
+            src={data.photo}
+            alt="Register Image"
+            className={`w-full ${
+              !modal ? "h-[370px] sm:h-[500px]" : "md:h-full md:max-h-[500px]"
+            } object-cover object-center`}
+          />
+        </div>
+      )}
     </div>
   );
 }

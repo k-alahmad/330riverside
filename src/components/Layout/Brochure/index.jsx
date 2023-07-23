@@ -21,7 +21,7 @@ const Brochure = () => {
       <img
         src={BrochureImg}
         alt="Brochure"
-        className="h-[400px] w-[300px] object-fill col-start-4 col-span-2 -mt-44 lg:hidden"
+        className="h-[400px] w-[370px] object-fill col-start-4 col-span-2 -mt-44 lg:hidden"
       />
       <div className="text-white lg:grid lg:grid-cols-5 max-lg:py-4 px-[10%]">
         <div
