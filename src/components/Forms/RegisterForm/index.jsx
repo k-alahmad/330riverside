@@ -6,7 +6,13 @@ import { MdMail, MdPerson } from "react-icons/md";
 import PhoneInput from "react-phone-input-2";
 import "react-phone-input-2/lib/bootstrap.css";
 import Brochure from "../../../assets/pdf/330.pdf";
-import { hideModal, register, counterIsFull } from "../../../redux/modal.slice";
+import {
+  hideModal,
+  register,
+  counterIsFull,
+  selectDownloadState,
+  selectRegisterState,
+} from "../../../redux/modal.slice";
 import { useTranslation } from "react-i18next";
 const CustomInput = ({
   icon,
@@ -41,6 +47,8 @@ const RegisterForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const form = useRef();
+  const downloadState = useSelector(selectDownloadState);
+  const registerState = useSelector(selectRegisterState);
 
   const sendEmail = (e) => {
     e.preventDefault();
