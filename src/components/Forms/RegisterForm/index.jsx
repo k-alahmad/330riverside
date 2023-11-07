@@ -107,7 +107,12 @@ const RegisterForm = () => {
           alink.download = "BrochurePdf.pdf";
           alink.click();
         }
-        dispatch(register());
+        dispatch(
+          register({
+            email: form.current.email.value,
+            phoneNo: form.current.phone.value,
+          })
+        );
         dispatch(counterIsFull());
         dispatch(hideModal());
         navigate("/thankyou");
