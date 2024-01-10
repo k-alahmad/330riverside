@@ -17,7 +17,7 @@ const NearbyT1 = () => {
         dir={i18n.language == "en" ? "ltr" : "rtl"}
       >
         <div
-          className="lg:px-10 xl:px-16 col-span-5 py-7 max-lg:px-8"
+          className="lg:px-10 xl:px-16 col-span-full py-7 max-lg:px-8"
           dir={i18n.language == "en" ? "ltr" : "rtl"}
         >
           <p className="font-bold text-huge">{t(data.title)}</p>
@@ -31,7 +31,7 @@ const NearbyT1 = () => {
             />
           </div>
         </div>
-        <motion.div
+        {/* <motion.div
           key={selectedIndex}
           initial={{ opacity: 0 }}
           animate={{
@@ -45,7 +45,7 @@ const NearbyT1 = () => {
             alt="Nearby Image"
             className="h-full w-full"
           />
-        </motion.div>
+        </motion.div> */}
       </div>
     </NearbyContainer>
   );

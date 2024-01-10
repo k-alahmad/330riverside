@@ -32,27 +32,26 @@ const NearbyItemsSlider = ({ selectedIndex, setSelectedIndex }) => {
       {
         breakpoint: 3000,
         settings: {
-          slidesToShow: 3,
-          slidesPerRow: 3,
-          slidesToScroll: 4,
+          slidesToShow: 5,
+          slidesPerRow: 2,
+          slidesToScroll: 5,
         },
       },
 
       {
         breakpoint: 1280,
         settings: {
-          slidesToShow: 2,
+          slidesToShow: 3,
           slidesToScroll: 2,
-          slidesPerRow: 2,
+          slidesPerRow: 3,
         },
       },
       {
         breakpoint: 1025,
         settings: {
-          slidesToShow: 4,
+          slidesToShow: 3,
           slidesToScroll: 4,
-          rows: 1,
-          slidesPerRow: 1,
+          slidesPerRow: 3,
         },
       },
       {
@@ -60,8 +59,8 @@ const NearbyItemsSlider = ({ selectedIndex, setSelectedIndex }) => {
         settings: {
           slidesToShow: 3,
           slidesToScroll: 3,
-          rows: 1,
-          slidesPerRow: 1,
+
+          slidesPerRow: 3,
         },
       },
       {
@@ -69,8 +68,7 @@ const NearbyItemsSlider = ({ selectedIndex, setSelectedIndex }) => {
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          rows: 1,
-          slidesPerRow: 1,
+          slidesPerRow: 4,
         },
       },
     ],
@@ -87,13 +85,15 @@ const NearbyItemsSlider = ({ selectedIndex, setSelectedIndex }) => {
       <div
         onClick={onClick}
         dir={i18n.language == "en" ? "ltr" : "rtl"}
-        className={`bg-white mb-6 text-black p-6 xl:p-4 h-36 rounded flex flex-col justify-center items-start space-y-1 cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-white/40 hover:bg-white/90 mx-2 xl:mx-1 ${
-          index == selectedIndex ? "bg-white/70 shadow-lg shadow-white/40" : ""
-        }`}
+        className={`bg-white mb-6 text-black p-6 xl:p-4 h-36 lg:h-60 rounded flex flex-col justify-center items-start space-y-1 cursor-pointer transition-all duration-300 hover:shadow-lg hover:shadow-white/40 hover:bg-white/90 mx-2 xl:mx-1`}
       >
-        <img src={icon} alt="Grid Image" className="h-10 w-10 " />
-        <p className="text-smaller font-semibold"> {name}</p>
-        <p className="font-extralight text-tiny"> {duration} </p>
+        <img
+          src={icon}
+          alt="Grid Image"
+          className="h-10 lg:h-16 w-10 lg:w-16 "
+        />
+        <p className="text-smaller lg:text-small font-semibold"> {name}</p>
+        <p className="font-extralight text-tiny lg:text-smaller">{duration}</p>
       </div>
     );
   };

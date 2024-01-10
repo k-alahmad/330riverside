@@ -16,8 +16,8 @@ const Home = () => {
       <FloorPlanT1 />
       <div id="nearby" />
       <NearbyT1 />
-      <div id="location" />
-      <LocationT1 />
+      {/* <div id="location" />
+      <LocationT1 /> */}
       <div id="contactus" />
       <div className="-translate-y-24">
         <RegisterT1 />

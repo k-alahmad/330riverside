@@ -48,10 +48,10 @@ const PageLayout = ({ children, type }) => {
       <NavBar />
       <div className="min-h-screen w-full max-w-[1920px]">
         {type == "lines" ? (
-          <div className="relative grid grid-cols-12 h-[5950px] sm:h-[6150px] md:h-[7400px] lg:h-[5550px] xl:h-[5400px] 2xl:h-[5550px] border-t-[1px] border-gray-200 mt-6">
-            <div className="border-r-[1px] border-l-[1px] border-gray-200 col-span-4" />
-            <div className="border-r-[1px] border-gray-200 col-span-4" />
-            <div className="border-r-[1px] border-gray-200 col-span-4" />
+          <div className="relative grid grid-cols-12 h-[5350px] sm:h-[5350px] md:h-[6100px] lg:h-[5100px] xl:h-[4700px] 2xl:h-[4600px] border-t-[1px] border-gray-200 mt-6">
+            <div className="border-r-[1px] border-l-[1px] border-gray-200 col-span-4 max-sm:hidden" />
+            <div className="border-r-[1px] border-gray-200 col-span-4 max-sm:hidden" />
+            <div className="border-r-[1px] border-gray-200 col-span-4 max-sm:hidden" />
             <div className="absolute w-full h-full">{children}</div>
           </div>
         ) : (
